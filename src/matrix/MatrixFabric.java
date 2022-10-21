@@ -1,3 +1,5 @@
+package matrix;
+
 public class MatrixFabric {
 
     public static Integer[][] makeDefaultArray2D(int dimension){
@@ -14,16 +16,13 @@ public class MatrixFabric {
         return array2D;
     }
 
-    public static Matrix makeDefaultMatrix(int dimension){
-        return new Matrix(makeDefaultArray2D(dimension));
-    }
-
     public static Matrix makeMyVariantMatrix(){
         final var array2D = makeDefaultArray2D(5);
         array2D[0][4] = 1;
 
         array2D[1][3] = 1;
         array2D[1][4] = 1;
+        array2D[1][0] = 1;
 
         array2D[2][0] = 1;
         array2D[2][1] = 1;
