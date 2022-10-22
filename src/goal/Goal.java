@@ -14,23 +14,12 @@ public class Goal {
         this.value = value;
     }
 
-    public String getName(){
+    public String getName() {
         return letter + id;
     }
 
     @Override
     public String toString() {
         return letter + id + " = " + formatter.format(value);
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        if (object == this) {
-            return true;
-        }
-        if (!(object instanceof Goal goal)) {
-            return false;
-        }
-        return goal.id == this.id && goal.value == this.value;
     }
 }

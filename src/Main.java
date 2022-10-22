@@ -1,19 +1,23 @@
+import comparator.PairedComparator;
 import comparator.SequentialComparator;
 import goal.Goal;
+import goal.Goals;
+import matrix.MatrixFabric;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static goal.Goals.sortList;
 
 public class Main {
     public static void main(String[] args) {
-        var list1 = List.of(
-        new Goal(2, 100),
-        new Goal(3, 70),
-        new Goal(4, 50),
-        new Goal(5, 25),
-        new Goal(1, 10));
-        var step = 15;
-        List<Goal> list = new ArrayList<>(list1);
+        var matrix = MatrixFabric.makeMyVariantMatrix();
+        System.out.printf("My matrix by variant:\n\n%s\n", matrix);
+        PairedComparator.compare(matrix);
+        System.out.println();
+
+        var step = 5;
+        List<Goal> list = Goals.makeListOfGoalsWithValues(10, 100, 70, 50, 25);
+        sortList(list);
         SequentialComparator.compare(list, step);
     }
 }

@@ -11,21 +11,20 @@ public class SequentialComparator {
 
     public static void compare(List<Goal> list, int estimationIncreaseStep) {
         System.out.println("Sequential comparison: ");
-        sortList(list);
         System.out.print("Preliminary estimation: ");
         printList(list);
-        algorithm(list, estimationIncreaseStep);
+        calculateEstimation(list, estimationIncreaseStep);
         printResultOfComparison(list);
         System.out.println("Sequential comparison analysis has finished work");
     }
 
-    public static void algorithm(List<Goal> list, int estimationIncreaseStep){
+    public static void calculateEstimation(List<Goal> list, int estimationIncreaseStep) {
         var v = new Goal[list.size()];
         list.toArray(v);
-        algorithm(v, estimationIncreaseStep);
+        calculateEstimation(v, estimationIncreaseStep);
     }
 
-    public static void algorithm(Goal[] v, int estimationIncreaseStep){
+    public static void calculateEstimation(Goal[] v, int estimationIncreaseStep) {
         int i, j, c;
         var size = v.length;
         for (i = size - 3; i >= 0; i--) {

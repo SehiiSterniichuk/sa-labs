@@ -6,10 +6,10 @@ public class MatrixFabric {
         Integer[][] array2D = new Integer[dimension][dimension];
         for (int i = 0; i < dimension; i++) {
             for (int j = 0; j < dimension; j++) {
-                if(j == i){
-                    array2D[i][j] = null;
-                }else {
+                if(j != i){
                     array2D[i][j] = 0;
+                }else {
+                    array2D[i][j] = null;
                 }
             }
         }

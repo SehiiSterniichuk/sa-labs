@@ -13,7 +13,7 @@ public record Matrix(Integer[][] array2D) {
         for (int i = 0; i < dimension; i++) {
             builder.append('\t').append('Z').append((i + 1));
             for (int j = 0; j < dimension; j++) {
-                if (j != i){
+                if (j != i) {
                     builder.append('\t').append(array2D[i][j]);
                     continue;
                 }

@@ -10,19 +10,18 @@ import static comparator.Printer.printResultOfComparison;
 
 public class PairedComparator {
 
-    public static List<Goal> compare(Matrix matrix) {
+    public static void compare(Matrix matrix) {
         System.out.println("Paired comparison: ");
-        var list = calculatePrice(matrix);
+        var list = calculateEstimation(matrix);
         printResultOfComparison(list);
         System.out.println("Paired comparison analysis has finished work");
-        return list;
     }
 
-    public static List<Goal> calculatePrice(Matrix matrix) {
-        return calculatePrice(matrix.array2D());
+    public static List<Goal> calculateEstimation(Matrix matrix) {
+        return calculateEstimation(matrix.array2D());
     }
 
-    public static List<Goal> calculatePrice(Integer[][] array2D) {
+    public static List<Goal> calculateEstimation(Integer[][] array2D) {
         final var dimension = array2D.length;
         final List<Goal> list = new ArrayList<>();
         for (int i = 0; i < dimension; i++) {
