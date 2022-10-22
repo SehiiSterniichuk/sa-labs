@@ -5,12 +5,11 @@ import java.text.DecimalFormat;
 public class Goal {
     private static final DecimalFormat formatter = new DecimalFormat("#.##");
 
-    public String letter;
+    public static String letter = "Z";
     public final int id;
     public double value;
 
-    public Goal(String letter, int id, double value) {
-        this.letter = letter;
+    public Goal(int id, double value) {
         this.id = id;
         this.value = value;
     }

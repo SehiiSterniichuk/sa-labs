@@ -11,22 +11,18 @@ public class Goals {
     }
 
     public static void weighList(List<Goal> list) {
-        var sum = sum(list);
-        list.forEach(x -> {
-            x.value = x.value / sum;
-            x.letter = "V";
-        });
+        final var sum = sum(list);
+        list.forEach(x -> x.value = x.value / sum);
     }
 
     public static void sortList(List<Goal> list) {
         list.sort(Comparator.comparingDouble(x -> x.value));
         Collections.reverse(list);
-        list.forEach(x -> x.letter = "Z");
     }
 
     public static void printList(List<Goal> list){
         System.out.println("[");
-        list.forEach(System.out::println);
+        list.forEach(x-> System.out.printf("%s,\n",x));
         System.out.println("]");
     }
 
