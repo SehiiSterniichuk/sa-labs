@@ -16,7 +16,7 @@ public class Main {
         System.out.println();
 
         var step = 5;
-        List<Goal> list = Goals.makeListOfGoalsWithValues(10, 100, 70, 50, 25);
+        List<Goal> list = Goals.makeListOfGoalsWithValues(25, 70, 100, 50, 10);
         sortList(list);
         SequentialComparator.compare(list, step);
     }
